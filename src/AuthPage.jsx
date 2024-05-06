@@ -12,7 +12,7 @@ const AuthPage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('https://f6a15c0b-44d5-4e9a-8cb4-64befeb2b252-00-2zk636m79ds6n.pike.replit.dev/auth', {
+      const response = await fetch('https://codetotodo.onrender.com/auth', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

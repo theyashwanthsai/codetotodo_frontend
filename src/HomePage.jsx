@@ -9,7 +9,7 @@ const HomePage = () => {
         Set up a trigger with the desired repo. Now set the callback URL to:
       </p>
       <p style={styles.callbackUrl}>
-        https://f6a15c0b-44d5-4e9a-8cb4-64befeb2b252-00-2zk636m79ds6n.pike.replit.dev/auth
+        https://codetotodo.onrender.com/
       </p>
       <p style={styles.paragraph}>
         After you have finished the setup, you can start coding, and the Trello board will automatically be updated.
