@@ -41,11 +41,12 @@ const AuthPage = () => {
       console.error('Authentication failed:', error);
     }
   };
-
+  // 
   return (
     <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '100vh', textAlign: 'center'  }}>
   <div style={{ width: '300px', padding: '20px', border: '1px solid #ccc', borderRadius: '5px' }}>
     <h2 style={{ textAlign: 'center' }}>Authentication</h2>
+    <p>You can get list id from trello website. Just add `.json` at the end of the url of ur board, Try searching for listid using `control+f`</p>
     <form onSubmit={handleSubmit}>
       <div style={{ marginBottom: '10px' }}>
         <label htmlFor="userId">User ID:</label>
