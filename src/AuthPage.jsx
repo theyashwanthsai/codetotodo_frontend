@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const AuthPage = () => {
-  const [apiKey, setApiKey] = useState('');
   const [userId, setUserId] = useState('');
   const [todoId, setTodoId] = useState('');
   const [doneId, setDoneId] = useState('');
@@ -19,7 +18,6 @@ const AuthPage = () => {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          api_key: apiKey,
           user_id: userId,
           todo_id: todoId,
           done_id: doneId,
@@ -46,38 +44,30 @@ const AuthPage = () => {
   };
 
   return (
-    <div>
-      <h1>Authentication</h1>
-      <form onSubmit={handleSubmit}>
-        <label>
-          API Key:
-          <input type="text" value={apiKey} onChange={(e) => setApiKey(e.target.value)} />
-        </label>
-        <br />
-        <label>
-          User ID:
-          <input type="text" value={userId} onChange={(e) => setUserId(e.target.value)} />
-        </label>
-        <br />
-        <label>
-          Todo ID:
-          <input type="text" value={todoId} onChange={(e) => setTodoId(e.target.value)} />
-        </label>
-        <br />
-        <label>
-          Done ID:
-          <input type="text" value={doneId} onChange={(e) => setDoneId(e.target.value)} />
-        </label>
-        <br />
-        <label>
-          Username:
-          <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} />
-        </label>
-        <br />
-        <button type="submit">Authenticate</button>
-      </form>
-    </div>
-  );
+    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '100vh', textAlign: 'center'  }}>
+  <div style={{ width: '300px', padding: '20px', border: '1px solid #ccc', borderRadius: '5px' }}>
+    <h2 style={{ textAlign: 'center' }}>Authentication</h2>
+    <form onSubmit={handleSubmit}>
+      <div style={{ marginBottom: '10px' }}>
+        <label htmlFor="userId">User ID:</label>
+        <input type="text" id="userId" value={userId} onChange={(e) => setUserId(e.target.value)} style={{ width: '100%' }} />
+      </div>
+      <div style={{ marginBottom: '10px' }}>
+        <label htmlFor="todoId">Todo ID:</label>
+        <input type="text" id="todoId" value={todoId} onChange={(e) => setTodoId(e.target.value)} style={{ width: '100%' }} />
+      </div>
+      <div style={{ marginBottom: '10px' }}>
+        <label htmlFor="doneId">Done ID:</label>
+        <input type="text" id="doneId" value={doneId} onChange={(e) => setDoneId(e.target.value)} style={{ width: '100%' }} />
+      </div>
+      <div style={{ marginBottom: '10px' }}>
+        <label htmlFor="username">Username:</label>
+        <input type="text" id="username" value={username} onChange={(e) => setUsername(e.target.value)} style={{ width: '100%' }} />
+      </div>
+      <button type="submit" style={{ width: '100%' }}>Authenticate</button>
+    </form>
+  </div>
+</div> );
 };
 
 export default AuthPage;
