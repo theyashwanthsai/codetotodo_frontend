@@ -21,7 +21,6 @@ const AuthPage = () => {
           user_id: userId,
           todo_id: todoId,
           done_id: doneId,
-          username: username,
         }),
       });
 
@@ -60,14 +59,11 @@ const AuthPage = () => {
         <label htmlFor="doneId">Done ID:</label>
         <input type="text" id="doneId" value={doneId} onChange={(e) => setDoneId(e.target.value)} style={{ width: '100%' }} />
       </div>
-      <div style={{ marginBottom: '10px' }}>
-        <label htmlFor="username">Username:</label>
-        <input type="text" id="username" value={username} onChange={(e) => setUsername(e.target.value)} style={{ width: '100%' }} />
-      </div>
       <button type="submit" style={{ width: '100%' }}>Authenticate</button>
     </form>
   </div>
-</div> );
+</div>
+);
 };
 
 export default AuthPage;
